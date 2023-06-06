@@ -4,25 +4,28 @@ html, body {
 }
 
 .container {
-    display: grid;
-    grid-template-rows: auto 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
 }
 
 .header {
-    justify-content: center;
     display: flex;
+    justify-content: center;
     font-size: 40px;
     background-color: aquamarine;
     gap: 20px;
 }
 
 .content {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .string {
-    grid-row: 1 / 2;
     justify-self: center;
     font-size: 50px;
     color: crimson;
@@ -36,12 +39,8 @@ html, body {
 
 .gameboard {
     display: grid;
-    grid-row: 2 / 3;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    margin-left: 700px;
-    margin-right: 700px;
-    height: 700px;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
 }
 
 .game-grid {
@@ -66,4 +65,30 @@ html, body {
     justify-self: center;
     margin-top: 20px;
     padding: 15px;
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 20px;
+    }
+
+    #ttt-image {
+        height: 40px;
+    }
+
+    #btn {
+        font-size: 20px;
+    }
+
+    .string {
+        font-size: 30px;
+    }
+    
+}
+
+@media (min-width: 481px) and (max-width: 1080px) {
+    .header {
+        font-size: 28px;
+    }
+
 }
